@@ -1,0 +1,172 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 584
+  ClientWidth = 709
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 709
+    Height = 49
+    Align = alTop
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 618
+      Top = 12
+      Width = 83
+      Height = 19
+      Caption = '<- History'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Button1: TButton
+      Left = 496
+      Top = 11
+      Width = 63
+      Height = 29
+      Caption = 'search'
+      Default = True
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 25
+      Top = 11
+      Width = 24
+      Height = 29
+      Caption = '<'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 49
+      Top = 11
+      Width = 24
+      Height = 29
+      Caption = '>'
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Left = 72
+      Top = 11
+      Width = 24
+      Height = 29
+      Caption = 'r'
+      TabOrder = 3
+      OnClick = Button4Click
+    end
+    object Button5: TButton
+      Left = 1
+      Top = 11
+      Width = 24
+      Height = 29
+      Caption = 'h'
+      TabOrder = 4
+      OnClick = Button5Click
+    end
+    object ComboBox1: TComboBox
+      Left = 96
+      Top = 12
+      Width = 400
+      Height = 27
+      TabOrder = 5
+      Text = 'google.com'
+      OnClick = ComboBox1Click
+    end
+    object ToggleSwitch1: TToggleSwitch
+      Left = 562
+      Top = 11
+      Width = 50
+      Height = 20
+      ShowStateCaption = False
+      TabOrder = 6
+      OnClick = ToggleSwitch1Click
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 49
+    Width = 709
+    Height = 535
+    Align = alClient
+    TabOrder = 1
+    object CppWebBrowser1: TCppWebBrowser
+      Left = 501
+      Top = 1
+      Width = 207
+      Height = 533
+      Align = alClient
+      TabOrder = 0
+      ExplicitLeft = 144
+      ExplicitTop = -3
+      ExplicitWidth = 481
+      ControlData = {
+        4C00000065150000163700000000000000000000000000000000000000000000
+        000000004C000000000000000000000001000000E0D057007335CF11AE690800
+        2B2E126208000000000000004C0000000114020000000000C000000000000046
+        8000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000100000000000000000000000000000000000000}
+    end
+    object Panel3: TPanel
+      Left = 1
+      Top = 1
+      Width = 500
+      Height = 533
+      Align = alLeft
+      TabOrder = 1
+      object ListBox1: TListBox
+        Left = 1
+        Top = 1
+        Width = 498
+        Height = 531
+        Align = alClient
+        ItemHeight = 13
+        TabOrder = 0
+        ExplicitWidth = 326
+      end
+    end
+    object SplitView1: TSplitView
+      Left = 501
+      Top = 1
+      Width = 0
+      Height = 533
+      Opened = False
+      OpenedWidth = 500
+      Placement = svpLeft
+      TabOrder = 2
+      ExplicitLeft = 1
+      object ListBox2: TListBox
+        Left = 0
+        Top = 0
+        Width = 0
+        Height = 533
+        Align = alClient
+        ItemHeight = 13
+        TabOrder = 0
+        ExplicitWidth = 500
+      end
+    end
+  end
+end

@@ -1,0 +1,167 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+const int marimea=25;
+int zona[marimea][marimea];
+int lungimej=3;
+int capx, capy;
+int vermex[25];
+int vermey[25];
+
+int directia;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+void __fastcall TForm1::mincare()
+{
+ for (int i = 0; i < marimea; i++)
+ {
+  zona[random(25)][random(25)]=2; //mincare
+ }
+}
+void __fastcall TForm1::bloc()
+{
+ for (int i = 0; i < marimea; i++)
+ {
+  zona[random(marimea)][random(marimea)]=3; //bloc
+ }
+}
+
+void __fastcall TForm1::curatire()
+{
+ for (int i = 0; i < marimea; i++)
+ {
+   for (int j = 0; j < marimea; j++)
+   {
+	 zona[i][j]=0; //liber
+   }
+ }
+}
+
+void __fastcall TForm1::jerme()
+{
+ capx=1+random(23);
+ capy=1+random(23);
+
+ for (int i = 0; i < lungimej; i++)
+ {
+  zona[capx][capy+i]=1; //jerme
+ }
+}
+
+void __fastcall TForm1::start()
+{
+ for (int x = 0; x < marimea; x++)
+ {
+   for (int y = 0; y < marimea; y++)
+   {
+	switch(zona[x][y])
+	{
+	  case 0: //liber
+	  {
+	   Form1->Canvas->Pen->Color=clBackground;
+	   Form1->Canvas->Brush->Color=clBackground;
+	   Form1->Canvas->Rectangle(x*20,y*20,x*20+20,y*20+20);
+	   break;
+	  }
+	  case 1: //jerme
+	  {
+	   Form1->Canvas->Pen->Color=clLime;
+	   Form1->Canvas->Brush->Color=clLime;
+	   Form1->Canvas->Rectangle(x*20,y*20,x*20+20,y*20+20);
+	   break;
+	  }
+	  case 2: //mancare
+	  {
+	   Form1->Canvas->Pen->Color=clMaroon;
+	   Form1->Canvas->Brush->Color=clMaroon;
+	   Form1->Canvas->Rectangle(x*20,y*20,x*20+20,y*20+20);
+	   break;
+	  }
+	  case 3: //block
+	  {
+	   Form1->Canvas->Pen->Color=clBlack;
+	   Form1->Canvas->Brush->Color=clBlack;
+	   Form1->Canvas->Rectangle(x*20,y*20,x*20+20,y*20+20);
+	   break;
+	  }
+	}
+
+   }
+ }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton1Click(TObject *Sender)
+{
+	curatire();
+	mincare();
+	//bloc();
+	jerme();
+	start();
+
+	Edit1->SetFocus();
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::Edit1KeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+{
+	if(Key == VK_UP) { directia = 0; }
+	else if(Key == VK_RIGHT) { directia = 1; }
+	else if(Key == VK_DOWN) { directia = 2; }
+	else if(Key == VK_LEFT) { directia = 3; }
+
+	switch(directia)
+	{
+		case 0 :
+		{
+			capy--;
+			zona[capx][capy] = 1;
+			zona[capx][capy + lungimej] = 0;
+
+            if(zona[capx][capy + 1] == 2)
+			{
+				lungimej++;
+			}
+
+			break;
+		}
+		case 1 :
+		{
+			break;
+		}
+		case 2 :
+		{
+			capy++;
+			zona[capx][capy] = 1;
+			zona[capx][capy - lungimej] = 0;
+
+			break;
+		}
+		case 3 :
+		{
+			break;
+		}
+	}
+
+	start();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+	Label1->Caption = lungimej;
+}
+//---------------------------------------------------------------------------
+

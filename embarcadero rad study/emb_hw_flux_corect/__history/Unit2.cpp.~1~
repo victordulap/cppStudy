@@ -1,0 +1,38 @@
+//---------------------------------------------------------------------------
+
+#include <System.hpp>
+#pragma hdrstop
+
+#include "Unit2.h"
+#include "Unit1.h"
+#pragma package(smart_init)
+//---------------------------------------------------------------------------
+
+//   Important: Methods and properties of objects in VCL can only be
+//   used in a method called using Synchronize, for example:
+//
+//      Synchronize(&UpdateCaption);
+//
+//   where UpdateCaption could look like:
+//
+//      void __fastcall flux1::UpdateCaption()
+//      {
+//        Form1->Caption = "Updated in a thread";
+//      }
+//---------------------------------------------------------------------------
+
+__fastcall flux1::flux1(bool CreateSuspended)
+	: TThread(CreateSuspended)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall flux1::Execute()
+{
+	int i = 0;
+	while( !flux1::Terminated )
+	{
+		Form1->Memo2->Lines->Add(IntToStr(i));
+		i++;
+	}
+}
+//---------------------------------------------------------------------------

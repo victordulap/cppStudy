@@ -1,0 +1,209 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 244
+  ClientWidth = 625
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 26
+    Height = 29
+    Caption = 'A'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 43
+    Width = 26
+    Height = 29
+    Caption = 'B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 78
+    Width = 26
+    Height = 29
+    Caption = 'C'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 144
+    Width = 26
+    Height = 29
+    Caption = 'N'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object aMin: TSpinEdit
+    Left = 40
+    Top = 8
+    Width = 73
+    Height = 29
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    MaxValue = 100
+    MinValue = 1
+    ParentFont = False
+    TabOrder = 0
+    Value = 0
+  end
+  object aMax: TSpinEdit
+    Left = 119
+    Top = 8
+    Width = 73
+    Height = 29
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    MaxValue = 100
+    MinValue = 2
+    ParentFont = False
+    TabOrder = 1
+    Value = 0
+    OnChange = aMaxChange
+  end
+  object bMin: TSpinEdit
+    Left = 40
+    Top = 43
+    Width = 73
+    Height = 29
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    MaxValue = 100
+    MinValue = 1
+    ParentFont = False
+    TabOrder = 2
+    Value = 0
+  end
+  object bMax: TSpinEdit
+    Left = 119
+    Top = 43
+    Width = 73
+    Height = 29
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    MaxValue = 100
+    MinValue = 2
+    ParentFont = False
+    TabOrder = 3
+    Value = 0
+    OnChange = bMaxChange
+  end
+  object cMin: TSpinEdit
+    Left = 40
+    Top = 78
+    Width = 73
+    Height = 29
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    MaxValue = 100
+    MinValue = 1
+    ParentFont = False
+    TabOrder = 4
+    Value = 0
+  end
+  object cMax: TSpinEdit
+    Left = 119
+    Top = 78
+    Width = 73
+    Height = 29
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    MaxValue = 100
+    MinValue = 2
+    ParentFont = False
+    TabOrder = 5
+    Value = 0
+    OnChange = cMaxChange
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 113
+    Width = 184
+    Height = 25
+    Caption = 'CALCULATE'
+    TabOrder = 6
+    OnClick = Button1Click
+  end
+  object ListBox1: TListBox
+    Left = 198
+    Top = 8
+    Width = 419
+    Height = 226
+    ItemHeight = 13
+    PopupMenu = PopupMenu1
+    TabOrder = 7
+  end
+  object SpinEdit1: TSpinEdit
+    Left = 8
+    Top = 179
+    Width = 184
+    Height = 55
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -37
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    MaxValue = 100
+    MinValue = 1
+    ParentFont = False
+    TabOrder = 8
+    Value = 1
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 136
+    Top = 144
+    object Delete1: TMenuItem
+      Caption = 'Delete'
+      OnClick = Delete1Click
+    end
+  end
+end

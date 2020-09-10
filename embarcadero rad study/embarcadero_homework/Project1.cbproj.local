@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/03/15 13:13:59.000.510,=C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020/03/15 13:13:59.000.551,=C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2020/03/31 23:06:11.000.780,=C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2020/03/31 23:06:11.000.677,=C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020/03/31 23:13:52.000.735,C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Unit1.cpp=D:\DulapVictor\embarcadero_homework\Unit1.cpp</Transaction>
+    <Transaction>2020/03/31 23:13:52.000.735,C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\DulapVictor\embarcadero_homework\Unit1.dfm</Transaction>
+    <Transaction>2020/03/31 23:13:52.000.735,C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Unit1.h=D:\DulapVictor\embarcadero_homework\Unit1.h</Transaction>
+    <Transaction>2020/03/31 23:13:54.000.792,C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\DulapVictor\embarcadero_homework\Project1PCH1.h</Transaction>
+    <Transaction>2020/03/31 23:13:56.000.178,C:\Users\anunachi\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\DulapVictor\embarcadero_homework\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,97 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma link "SHDocVw_OCX"
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	//ComboBox1->Sorted = true;
+	Form1->CppWebBrowser1->Navigate(ComboBox1->Text.w_str(),NULL,NULL,NULL,NULL);
+	ComboBox1->Items->Add(CppWebBrowser1->LocationURL);
+	ListBox1->Items->Add(ComboBox1->Text);//CppWebBrowser1->LocationURL);
+
+	FILE *f;
+	f = fopen("browserhistory.txt","a+");
+	AnsiString str;
+	str = CppWebBrowser1->LocationURL;
+	fprintf(f,"%s",str.c_str());
+	fclose(f);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	Form1->CppWebBrowser1->GoBack();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	Form1->CppWebBrowser1->GoForward();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+    Form1->CppWebBrowser1->Refresh();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+	Form1->CppWebBrowser1->GoHome();
+    ComboBox1->Text = "";
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::ComboBox1Click(TObject *Sender)
+{
+	Button1->Default = true;
+	ComboBox1->SelectAll();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormActivate(TObject *Sender)
+{
+	ComboBox1->SetFocus();
+    //Panel3->Visible = false;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+    Panel3->Visible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ToggleSwitch1Click(TObject *Sender)
+{
+	/*if(ToggleSwitch1->State == tssOn)
+	{
+		//for(int i=0; i<500; i+=4) Panel3->Width = i;
+	}
+	else
+	{
+		//for(int i=500; i>=0; i-=4) Panel3->Width = i;
+	}*/
+	if(SplitView1->Opened == false)
+	{
+		SplitView1->Opened = true;
+	}
+	else
+	{
+		SplitView1->Opened = false;
+	}
+	/*
+	AnsiString x = box->Selected[box->ItemIndex]; //box->Items[box->ItemIndex].Text.c_str();
+	ComboBox1->Text = x;
+    */
+}
+//---------------------------------------------------------------------------
+
+

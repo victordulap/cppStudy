@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "IniFiles.hpp"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+TIniFile *Ini = new TIniFile(GetCurrentDir() + "\\launch.ini");
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormShow(TObject *Sender)
+{
+	//int
+	//Form1->Width = Ini->WriteString("Form","Width","100");
+	//Form1->Height = Ini->WriteString("Form","Height","100");
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	Ini->ReadString("Form","Width",IntToStr(Form1->Width));
+	Ini->ReadString("Form","Height",IntToStr(Form1->Height));
+}
+//---------------------------------------------------------------------------
